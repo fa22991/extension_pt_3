@@ -1,0 +1,33 @@
+{
+    "manifest_version" : 3,
+    "name": "CSShuffle",
+    "description": "An extension that allows you to edit webpage elements in real time and copy the code for the modified properties",
+    "version": "1.8",
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content/content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "action": {
+        "default_popup": "popup/popup.html",
+        "default_icon": "assets/logo.png"
+    },
+    "icons": {
+        "128":"assets/logo128.png"
+    },
+    "background": {
+        "service_worker" : "background/background.js",
+        "type": "module"
+    },
+    "permissions": [
+        "storage",
+        "tabs"
+    ]
+
+}
